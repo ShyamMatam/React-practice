@@ -1,9 +1,17 @@
-// import { createContext, useCallback, useContext, useId, useMemo, useRef, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { createContext, useContext, useState } from 'react'
-import './App.css'
-
+// import { createContext, useContext, useState } from 'react'
+import "./App.css";
 
 // step-1
 
@@ -22,19 +30,17 @@ import './App.css'
 
 // function App() {
 
-
 //   return (
 //     <>
 //       <themeContext.Provider value='dark'>
 //         <ThemeButton/>
 //       </themeContext.Provider>
-        
+
 //     </>
 //   )
 // }
 
 // export default App
-
 
 // import React from 'react'
 // import { useHref } from 'react-router-dom'
@@ -54,14 +60,12 @@ import './App.css'
 //     <div>
 //       <input ref={inputRef}/>
 //       <button onClick={handleClick}>click me</button>
-      
-      
+
 //     </div>
 //   )
 // }
 
 // export default App
-
 
 // import React from 'react'
 
@@ -73,8 +77,6 @@ import './App.css'
 //     },[num]);
 //     return <p>squared: {squared}</p>
 //   }
-
-
 
 // const App = () => {
 //   const [num, setNum] = useState(2)
@@ -88,7 +90,6 @@ import './App.css'
 
 // export default App
 
-
 // import React from 'react'
 
 // function Button({handleClick}) {
@@ -101,7 +102,7 @@ import './App.css'
 //  const increment = useCallback(() => {
 //   setCount((pre => pre +1))
 //  })
-  
+
 //   return (
 //     <div>
 //       <p>{count}</p>
@@ -127,7 +128,6 @@ import './App.css'
 // export default App;
 
 // what is useId
-
 
 //useEffect and fetch data
 
@@ -197,10 +197,9 @@ import './App.css'
 //   </>
 // )
 // }
-// 
+//
 
-
-//Forms 
+//Forms
 
 // const Forms = () => {
 //   const [name, setName] = useState('');
@@ -226,7 +225,6 @@ import './App.css'
 // }
 
 // export default Forms;
-
 
 // prop drilling
 
@@ -262,39 +260,97 @@ import './App.css'
 
 //router-dom
 
-import { Routes, Link, Route, BrowserRouter} from 'react-router-dom'
+// import { Routes, Link, Route, BrowserRouter} from 'react-router-dom'
 
-function Home() {
-  return <h1>home</h1>
-}
+// function Home() {
+//   return <h1>home</h1>
+// }
 
-function About() {
-  return <h1>About</h1>
-}
+// function About() {
+//   return <h1>About</h1>
+// }
 
-function Contact() {
-  return <h1>Contact</h1>
-}
+// function Contact() {
+//   return <h1>Contact</h1>
+// }
+
+// function App() {
+//   return (
+//  <BrowserRouter>
+
+//       <nav>
+//         <Link to="/">Home</Link>
+//         <Link to="/about">About</Link>
+//         <Link to="/contact">Contact</Link>
+//       </nav>
+
+//       <Routes>
+//         <Route path='/' element={<Home/>}/>
+//         <Route path="/about" element={<About/>}/>
+//         <Route path="/contact" element={<Contact/>}/>
+//         </Routes>
+
+// </BrowserRouter>
+//   )
+// }
+
+// export default App;
+
+// fetching data using fetch
+
+// const App = () => {
+//   const [users, setUsers] = useState([]);
+
+//   useEffect(() => {
+//     // fetch("https://jsonplaceholder.typicode.com/users")
+//     fetch("https://api.restful-api.dev/objects")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setUsers(data);
+//         console.log(data);
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//       });
+//   }, []);
+//   return (
+//     <div>
+//       <h1>hello</h1>
+//       <ul>
+//         {users.map((user) => (
+//           <li key={user.id}>{user.name}</li>
+//         ))}
+//       </ul>
+
+//       <ul>
+//         {users.map((user) => (
+//           <li key={user.id}>
+//             {user.data
+//               ? Object.entries(user.data).map(([key, value]) => (
+//                   <div key={key}>
+//                     {key}: {value}
+//                   </div>
+//                 ))
+//               : "No data"}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default App;
 
 
-function App() {
+import React from 'react'
+import TabForm from "./machinecoding/tabform/compoenets/TabForm";
+
+const App = () => {
   return (
- <BrowserRouter>
-  
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        </Routes>
-    
-</BrowserRouter>
+    <div>
+      <TabForm/>
+    </div>
   )
 }
 
-export default App;
+export default App
