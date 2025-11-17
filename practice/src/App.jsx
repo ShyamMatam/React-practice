@@ -344,11 +344,13 @@ import "./App.css";
 
 import React from 'react'
 import TabForm from "./machinecoding/tabform/compoenets/TabForm";
+import Pagination from "./machinecoding/pagination/components/Pagination";
 
 const App = () => {
   return (
     <div>
-      <TabForm/>
+      {/* <TabForm/> */}
+      <Pagination/>
     </div>
   )
 }
