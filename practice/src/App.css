@@ -69,3 +69,7 @@ border: 2px solid black;
 .page-disabled {
   opacity: 0;
 }
+
+.prev-disable {
+  opacity: 0;
+}

@@ -345,12 +345,14 @@ import "./App.css";
 import React from 'react'
 import TabForm from "./machinecoding/tabform/compoenets/TabForm";
 import Pagination from "./machinecoding/pagination/components/Pagination";
+import SearchFilter from "./machinecoding/searchfilter/SearchFilter";
 
 const App = () => {
   return (
     <div>
       {/* <TabForm/> */}
-      <Pagination/>
+      {/* <Pagination/> */}
+      <SearchFilter/>
     </div>
   )
 }
