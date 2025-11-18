@@ -346,13 +346,15 @@ import React from 'react'
 import TabForm from "./machinecoding/tabform/compoenets/TabForm";
 import Pagination from "./machinecoding/pagination/components/Pagination";
 import SearchFilter from "./machinecoding/searchfilter/SearchFilter";
+import TodoApp from "./machinecoding/todo/TodoApp";
 
 const App = () => {
   return (
     <div>
       {/* <TabForm/> */}
       {/* <Pagination/> */}
-      <SearchFilter/>
+      {/* <SearchFilter/> */}
+      <TodoApp/>
     </div>
   )
 }
