@@ -347,14 +347,37 @@ import TabForm from "./machinecoding/tabform/compoenets/TabForm";
 import Pagination from "./machinecoding/pagination/components/Pagination";
 import SearchFilter from "./machinecoding/searchfilter/SearchFilter";
 import TodoApp from "./machinecoding/todo/TodoApp";
+import Acoordion from "./machinecoding/accordion/components/Acoordion";
+import Chips from "./machinecoding/chips/Chips";
 
 const App = () => {
+
+  const items = [
+    {title : "javascript-1",
+      content : "js1"
+    },
+    {title : "javascript2",
+      content : "js2"
+    },
+    {title : "javascript3",
+      content : "js3"
+    },
+    {title : "javascript4",
+      content : "js4"
+    },
+    {title : "javascript5",
+      content : "js5"
+    }
+
+  ]
   return (
     <div>
       {/* <TabForm/> */}
       {/* <Pagination/> */}
       {/* <SearchFilter/> */}
-      <TodoApp/>
+      {/* <TodoApp/> */}
+     {/* <Acoordion items={items}/> */}
+     <Chips/>
     </div>
   )
 }
