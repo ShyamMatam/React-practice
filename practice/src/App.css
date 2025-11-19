@@ -90,3 +90,9 @@ display: block;
   padding: 10px;
   margin: 10px;
 }
+
+/* todo */
+
+.strike-through {
+  text-decoration: line-through;
+}

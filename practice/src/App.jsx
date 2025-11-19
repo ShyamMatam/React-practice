@@ -375,9 +375,9 @@ const App = () => {
       {/* <TabForm/> */}
       {/* <Pagination/> */}
       {/* <SearchFilter/> */}
-      {/* <TodoApp/> */}
+      <TodoApp/>
      {/* <Acoordion items={items}/> */}
-     <Chips/>
+     {/* <Chips/> */}
     </div>
   )
 }
