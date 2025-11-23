@@ -145,15 +145,15 @@ const TodoApp = () => {
   };
 
   const toggleCompleted = (id) => {
-
+ // map creates a new array; only the matching item is replaced with a new object
     const updatedList = todoList.map((t) => {
         if (t.id === id) {
           return {
-            ...t,
-            completed: !t.completed,
+            ...t,      // keep other fields the same
+            completed: !t.completed,    // flip the boolean
           };
-        } else {
-          return t;
+        } else { 
+          return t;  // unchanged items are returned as-is
         }
       }); 
 

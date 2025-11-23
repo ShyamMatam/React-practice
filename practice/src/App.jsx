@@ -349,6 +349,8 @@ import SearchFilter from "./machinecoding/searchfilter/SearchFilter";
 import TodoApp from "./machinecoding/todo/TodoApp";
 import Acoordion from "./machinecoding/accordion/components/Acoordion";
 import Chips from "./machinecoding/chips/Chips";
+import ProgressBar from "./machinecoding/progress-bar/Progress-Bar";
+import Pb from "./machinecoding/progress-bar/Progress-Bar";
 
 const App = () => {
 
@@ -375,9 +377,10 @@ const App = () => {
       {/* <TabForm/> */}
       {/* <Pagination/> */}
       {/* <SearchFilter/> */}
-      <TodoApp/>
+      {/* <TodoApp/> */}
      {/* <Acoordion items={items}/> */}
      {/* <Chips/> */}
+     <Pb/>
     </div>
   )
 }
