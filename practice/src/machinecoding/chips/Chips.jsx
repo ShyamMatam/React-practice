@@ -5,7 +5,7 @@ const Chips = () => {
   const [chips, setChips] = useState([]);
 
   const handleKeyDown = (e) => {
-    
+    //do not add empty spaces in chips
     // if(inputText === "") {
     //     return;
     // };
@@ -24,6 +24,7 @@ const Chips = () => {
     const copyChips = [...chips];
     // using splice(startCount, {delete = 1,2 ,3, replce=0}, items)
     copyChips.splice(index, 1);
+    // it will update the chips after deletion
     setChips(copyChips);
   };
 

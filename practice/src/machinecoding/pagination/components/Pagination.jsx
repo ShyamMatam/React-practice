@@ -35,7 +35,7 @@ const Pagination = () => {
 
   const totalProducts = products.length;
   const noOfPages = Math.ceil(totalProducts / PageSize);
-  //in this currentpage * 10 -10 and we directly can take startIdx =0;
+  //in this currentpage * 10 -10 ;
   const startIdx = page * 10 - 10;
   // currentpage-10 , we are take 10 direactly
   const lastIdx = page * 10;
@@ -56,6 +56,8 @@ const Pagination = () => {
       <div className="pagination-container">
         <span onClick={() => selectPageHandler(page - 1)} className={page > 1 ? "" : "page-disabled"}>Prev</span>
         {/* in this we are using spread operator and "i" is the page index (i+ 1) because page number should from 1 not "0"  */}
+        {/* The current element (underscore(_) is a convention meaning "I don't need this value"). Each element is undefined since we only care about the index, not the value */}
+        {/* [...Array(5)]  // [undefined, undefined, undefined, undefined, undefined] [_ = undefined ]*/}
         {[...Array(noOfPages)].map((_, i) => {
           return (
             <span

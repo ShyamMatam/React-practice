@@ -354,6 +354,7 @@ import Pb from "./machinecoding/progress-bar/Progress-Bar";
 
 const App = () => {
 
+  //Accordion
   const items = [
     {title : "javascript-1",
       content : "js1"
