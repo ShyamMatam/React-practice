@@ -150,7 +150,7 @@ const TodoApp = () => {
         if (t.id === id) {
           return {
             ...t,      // keep other fields the same
-            completed: !t.completed,    // flip the boolean
+            completed: !t.completed,    // flip the boolean, if it already selected , unselected.
           };
         } else { 
           return t;  // unchanged items are returned as-is
@@ -166,6 +166,10 @@ const TodoApp = () => {
 
     const remainingTodos = todoList.filter((t) => t.id !== id)
     setTodoList(remainingTodos)
+
+    // const copyTodos = [...todoList]
+    // copyTodos.splice(id, 1)
+    // setTodoList(copyTodos)
   }
 
   return (

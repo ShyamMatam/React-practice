@@ -23,7 +23,7 @@ const Pagination = () => {
     fetchData();
   }, []);
 
-  //selectedPage(i) is just a page index(i + 1)(assume)
+  //selectedPage is just a page index(i + 1)(assume)
   const selectPageHandler = (selectedPage) => {
     if (
       selectedPage >= 1 &&
@@ -58,6 +58,8 @@ const Pagination = () => {
         {/* in this we are using spread operator and "i" is the page index (i+ 1) because page number should from 1 not "0"  */}
         {/* The current element (underscore(_) is a convention meaning "I don't need this value"). Each element is undefined since we only care about the index, not the value */}
         {/* [...Array(5)]  // [undefined, undefined, undefined, undefined, undefined] [_ = undefined ]*/}
+        {/* we only need "i", so we ignore _ */}
+        {/* {[...Array(noOfPages).keys()].map(i) => { this will also work */}
         {[...Array(noOfPages)].map((_, i) => {
           return (
             <span
@@ -78,3 +80,81 @@ const Pagination = () => {
 };
 
 export default Pagination;
+
+
+//namastedev
+
+// const PAGE_SIZE = 10;
+
+// const Pagination = () => {
+
+//   const [products, setProducts] = useState([])
+//   const [page, setPage] = useState(1)
+
+//   const fetchdata = async () => {
+//     try {
+//       const res = await fetch("https://dummyjson.com/products?limit=200");
+//       const data = await res.json();
+//       setProducts(data?.products)
+//       console.log(data)
+//     } catch (error) {
+//       console.log(error)
+//     }
+
+//   };
+
+//   useEffect(() => {
+//     fetchdata()
+//   }, []);
+
+
+//   const totalProducts = products.length;
+//   const noOfPages = Math.ceil(totalProducts / PAGE_SIZE);
+//   startIdx = page * 10 - 10;
+//   lastIdx = page * 10;
+
+//   //pgfn
+
+//   const handlePageSelect = (i) => {
+//   setPage(i)
+//   }
+
+//   //prev
+//   const handlePagePrev = () => {
+//     setPage((prev) => prev - 1)
+//   };
+
+//   //next
+
+//   const handlePageNext = () => {
+//     setPage((prev) => prev + 1)
+//   }
+
+//  return(
+//     <div>
+//      <h1>Pagination</h1>
+
+//      <div>{products.slice(startIdx, lastIdx).map((p) => (
+//        <div key={p.id}>
+//          <img src={p.images} height={75}  />
+//          <div>{p.title}</div>
+//        </div>
+       
+//      ))}</div>
+
+//      //pagination
+
+//     <button disabled={page === 1} id="Previous" onClick ={() => handlePagePrev()}>Prev</button>
+
+//      {[...Array(noOfPages).keys()].map(( i) => (
+      
+//          <span className={ page === i+1 ? "page-selected" : ""} key={i} onClick={() => handlePageSelect(i+1)}>{i + 1}</span>
+      
+//      ))}
+
+//      <button disabled={page === noOfPages} id="Next" onClick={() => handlePageNext()}>Next</button>
+//    </div>
+      
+//  )
+// };
+// export default Pagination;
