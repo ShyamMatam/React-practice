@@ -30,12 +30,12 @@ const Pagination = () => {
       selectedPage <= noOfPages &&
       selectedPage !== page
     ) 
-    setPage(selectedPage);
+    setPage(selectedPage); //just use this ignore above if block
   };
 
   const totalProducts = products.length;
   const noOfPages = Math.ceil(totalProducts / PageSize);
-  //in this currentpage * 10 -10 ;
+  //in this currentpage * 10 -10 ; 10 which is pageSize
   const startIdx = page * 10 - 10;
   // currentpage-10 , we are take 10 direactly
   const lastIdx = page * 10;
