@@ -351,6 +351,7 @@ import Acoordion from "./machinecoding/accordion/components/Acoordion";
 import Chips from "./machinecoding/chips/Chips";
 import ProgressBar from "./machinecoding/progress-bar/Progress-Bar";
 import Pb from "./machinecoding/progress-bar/Progress-Bar";
+import DataTable from "./machinecoding/data-table/DataTable";
 
 const App = () => {
 
@@ -381,7 +382,8 @@ const App = () => {
       {/* <TodoApp/> */}
      {/* <Acoordion items={items}/> */}
      {/* <Chips/> */}
-     <Pb/>
+     {/* <Pb/> */}
+     <DataTable/>
     </div>
   )
 }

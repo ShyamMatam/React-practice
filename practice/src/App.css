@@ -112,3 +112,29 @@ display: block;
 text-align: right;
 transition: 0.5s ease-in;
 }
+
+/* data-table */
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes gaps between borders */
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header Styles */
+thead th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 2px solid #6ba7e4;
+}
+
+/* Body Styles */
+tbody td {
+  padding: 12px 15px;
+  border: 1px solid #d45050;
+  color: #555;
+}
