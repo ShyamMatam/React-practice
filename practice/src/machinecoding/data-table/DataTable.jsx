@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 const DataTable = () => {
 
+  const [search, setSearch] = useState("")
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -31,9 +32,15 @@ const DataTable = () => {
     fetchData();
   }, []);
 
+   //search-filter
+
+  const filtered = products.filter((product) => 
+  product.title.toLowerCase().includes(search.toLowerCase())
+  )
 
   const PageSize = pageSize;
-  const totalProducts = products.length;
+  // const totalProducts = products.length;
+  const totalProducts = filtered.length;
   const noOfPages = Math.ceil(totalProducts / PageSize);
   const startIdx = (page - 1) * pageSize;
   const lastIdx = page * pageSize;
@@ -44,6 +51,8 @@ const DataTable = () => {
   
   return (
     <div>
+
+      <input type="text" value={search} onChange={(e) => setSearch(e.target.value)}/>
       <table>
         <thead>
           <tr>
@@ -53,7 +62,7 @@ const DataTable = () => {
           </tr>
         </thead>
         <tbody  className='table-body'>
-          {products.slice(startIdx, lastIdx).map((d) => (
+          {filtered.slice(startIdx, lastIdx).map((d) => (
             <tr key={d.id} className='row'>
             <td>{d.id}</td>
             <td>{d.title}</td>
