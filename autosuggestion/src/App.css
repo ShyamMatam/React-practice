@@ -1,0 +1,13 @@
+ .results-container {
+  width: 500px;
+  margin: auto;
+  border: 1px solid rgb(198, 75, 75);
+  display: block;
+} 
+
+.results-name {
+  padding: 5px;
+  margin: 5px;
+  color: aquamarine;
+  display: block;
+}
