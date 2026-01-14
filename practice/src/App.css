@@ -138,3 +138,15 @@ tbody td {
   border: 1px solid #d45050;
   color: #555;
 }
+
+/* Dark and Light Mode */
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
