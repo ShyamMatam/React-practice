@@ -52,6 +52,8 @@ export default function SearchSortPaginationAPI() {
   //   else return b.name.localeCompare(a.name);
   // });
 
+  // for users/products we can [...users/...products]
+
   const sorted = [...filtered].sort((a,b) => {
     if(sortOrder === "asc") return a.title.localeCompare(b.title);
     else return b.title.localeCompare(a.title);
