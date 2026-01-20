@@ -21,11 +21,14 @@ const Chips = () => {
   // deleteChip
   const handleDeleteChip = (index) => {
     // preserving the chips in copychips
-    const copyChips = [...chips];
-    // using splice(startCount, {delete = 1,2 ,3, replce=0}, items)
-    copyChips.splice(index, 1);
-    // it will update the chips after deletion
-    setChips(copyChips);
+    // const copyChips = [...chips];
+    // // using splice(startCount, {delete = 1,2 ,3, replce=0}, items)
+    // copyChips.splice(index, 1);
+    // // it will update the chips after deletion
+    // setChips(copyChips);
+
+    const remainingChips = chips.filter((chip, i) => i !== index);
+    setChips(remainingChips);
   };
 
   return (
