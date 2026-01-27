@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 const DataTable = () => {
-  const [search, setSearch] = useState("");
+  
+  const [search, setSearch] = useState("")
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 
   //setPage to 1, when page changes
   useEffect(() => {
-    setPage(1);
-  }, [pageSize]);
+    setPage(1)
+  }, [pageSize])
+
 
   const fetchData = async () => {
     try {
@@ -28,11 +30,11 @@ const DataTable = () => {
     fetchData();
   }, []);
 
-  //search-filter
+   //search-filter
 
-  const filtered = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = products.filter((product) => 
+  product.title.toLowerCase().includes(search.toLowerCase())
+  )
 
   const PageSize = pageSize;
   // const totalProducts = products.length;
@@ -42,16 +44,13 @@ const DataTable = () => {
   const lastIdx = page * pageSize;
 
   const selectPageHandler = (i) => {
-    setPage(i);
-  };
-
+    setPage(i)
+  }
+  
   return (
     <div>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+
+      <input type="text" value={search} onChange={(e) => setSearch(e.target.value)}/>
       <table>
         <thead>
           <tr>
@@ -60,20 +59,20 @@ const DataTable = () => {
             <th>Category</th>
           </tr>
         </thead>
-        <tbody className="table-body">
+        <tbody  className='table-body'>
           {filtered.slice(startIdx, lastIdx).map((d) => (
-            <tr key={d.id} className="row">
-              <td>{d.id}</td>
-              <td>{d.title}</td>
-              <td>{d.category}</td>
-            </tr>
+            <tr key={d.id} className='row'>
+            <td>{d.id}</td>
+            <td>{d.title}</td>
+            <td>{d.category}</td>
+          </tr>
           ))}
         </tbody>
         <thead>
           <tr></tr>
         </thead>
       </table>
-
+      
       <div className="pagination-container">
         <span
           onClick={() => selectPageHandler(page - 1)}
@@ -102,23 +101,19 @@ const DataTable = () => {
         </span>
       </div>
 
-      {/* selected page of page */}
-      <div>
-        <h1>
-          page {page} of {noOfPages}
-        </h1>
-      </div>
-      {/* filter rows by size */}
-      <div>
+    {/* selected page of page */}
+    <div><h1>page {page} of {noOfPages}</h1></div>
+    {/* filter rows by size */}
+   <div>
         <label>Rows per page:</label>
-        <select value={pageSize} onChange={(e) => setPageSize(e.target.value)}>
+        <select value={pageSize} onChange={(e) => setPageSize((e.target.value))}>
           <option value={5}>5</option>
           <option value={10}>10</option>
           <option value={15}>15</option>
         </select>
-      </div>
+     </div>
     </div>
-  );
-};
+  )
+}
 
 export default DataTable;
